@@ -1,11 +1,13 @@
 
 import React, { Component } from 'react';
 import FeatureItem from './FeatureItem';
+import Features from './Features';
+
 
 class FeatureForm extends Component {
 
     getFeatureItemList = () => {
-        return Object.keys(this.props.features).map((feature, idx) => {
+        return Object.keys(Features).map((feature, idx) => {
 
             const featureHash = feature + '-' + idx;
         
@@ -14,7 +16,7 @@ class FeatureForm extends Component {
                 key={featureHash}
                 featureHash={featureHash}
                 name={feature}
-                options={this.props.features[feature]}
+                options={Features[feature]}
                 updateFeature={this.props.updateFeature}
                 selected={this.props.selected}
               />
