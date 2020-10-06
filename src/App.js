@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Cart from './Cart';
 import './App.css';
 import FeatureForm from './FeatureForm';
+import PageTitle from './Title';
 
 class App extends Component {
   state = {
@@ -26,7 +27,7 @@ class App extends Component {
   };
 
   updateFeature = (feature, newValue) => {
-    const selected = Object.assign({}, this.state.selected);
+    const selected = Object.assign(this.state.selected);
     selected[feature] = newValue;
     this.setState({
       selected
@@ -36,9 +37,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header>
-          <h1>ELF Computing | Laptops</h1>
-        </header>
+        {PageTitle}
         <main>
           <FeatureForm 
             features={this.props.features} 
